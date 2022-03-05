@@ -3,13 +3,13 @@ Lights out game
 ## Tools
 JFrame
 ## Features:
-flexiable table size, generating a new game, Finding the best solution
+flexible table size, generating a new game, finding the best solution
 
 <img src="examples/demo.PNG">
 
 
 
-## Video Link
+## Video Link: Note the left and right buttons perform opposite in the app than what's in the video.
 <p align="center"> 
   <kbd>
     <a href="https://www.youtube.com/watch?v=ZzXf3Pn8s-g" target="_blank"><img src="examples/video.png">
