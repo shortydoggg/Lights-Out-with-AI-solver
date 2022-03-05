@@ -384,7 +384,7 @@ public class LightsOutView extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this, "the rows should be less than 13");
+                    JOptionPane.showMessageDialog(this, "the rows should be not more than 13");
 
                 }
 
@@ -404,7 +404,7 @@ public class LightsOutView extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this, "the rows should be more than 1");
+                    JOptionPane.showMessageDialog(this, "the rows should be at least 2");
                 }
 
             }
@@ -423,7 +423,7 @@ public class LightsOutView extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this, "the columns should be more than 1");
+                    JOptionPane.showMessageDialog(this, "the columns should be at least 2");
                 }
 
             }
@@ -442,7 +442,7 @@ public class LightsOutView extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this, "the columns should be less than 13");
+                    JOptionPane.showMessageDialog(this, "the columns should be not more than 13");
 
                 }
 
