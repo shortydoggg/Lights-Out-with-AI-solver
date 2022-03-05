@@ -3,9 +3,6 @@ package lightsout;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import minesweeper.MinesweeperView;
-import static lightsout.LightsOutModel.*;
-import static lightsout.LightsOutView.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -83,7 +80,7 @@ public class LightsOutView extends JFrame implements ActionListener
     public LightsOutView ()
     {
         // Set the title that appears at the top of the window
-        setTitle("CS1410 Lights Out");
+        setTitle("Lights Out");
         // Cause the application to end when the windows is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Give the window its initial dimensions
@@ -209,13 +206,13 @@ public class LightsOutView extends JFrame implements ActionListener
         JButton expandcol = new JButton(scaleImage(imgL, 2));
         expandcol.setBackground(controler_background);
         expandcol.addActionListener(this);
-        expandcol.setActionCommand("expandcol");
+        expandcol.setActionCommand("reducecol");
         p3.add(expandcol);
 
         JButton reducecol = new JButton(scaleImage(imgR, 2));
         reducecol.setBackground(controler_background);
         reducecol.addActionListener(this);
-        reducecol.setActionCommand("reducecol");
+        reducecol.setActionCommand("expandcol");
         p3.add(reducecol);
 
         Sizes = new JLabel("5 x 5");
@@ -458,7 +455,6 @@ public class LightsOutView extends JFrame implements ActionListener
     /**
      * The playing surface of the game.
      */
-    @SuppressWarnings("serial")
     class Board extends JPanel implements MouseListener
     {
         /** The "smarts" of the game */
@@ -636,7 +632,6 @@ public class LightsOutView extends JFrame implements ActionListener
     /**
      * A single square on the board where a move can be made
      */
-    @SuppressWarnings("serial")
     class Square extends JPanel
     {
         /**
@@ -724,9 +719,6 @@ public class LightsOutView extends JFrame implements ActionListener
         {
 
             int[] firstkey;
-            int[][] recoboard;
-            recoboard = model.getRecordBoard();
-
             firstkey = model.getFasterSolution();
             // Step1
             for (int i = 0; i < firstkey.length; i++)
@@ -735,9 +727,7 @@ public class LightsOutView extends JFrame implements ActionListener
                 {
                     board.AIclick(ROWS - 1, i);
                 }
-            }
-            // Step2
-            recoboard = model.getRecordBoard();
+            }            
             for (int i = ROWS - 2; i >= 0; i--)
             {
                 for (int j = 0; j < COLS; j++)
@@ -773,7 +763,6 @@ public class LightsOutView extends JFrame implements ActionListener
     /**
      * A move indicator circle for use in the user interface.
      */
-    @SuppressWarnings("serial")
     class MoveIndicator extends JPanel
     {
         // The color of this MoveIndicator
